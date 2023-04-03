@@ -94,33 +94,32 @@
         android:text="dont have an account? sign up now" />
 
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/others"
-        android:layout_above="@id/socialicons"
-        android:text="or sign in with"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"/>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/socialicons"
-        android:layout_alignParentBottom="true"
-        android:gravity="center">
+<!--    <TextView-->
+<!--        android:id="@+id/others"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_above="@id/socialicons"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="or sign in with"-->
+<!--        android:textColor="@color/white" />-->
 
 
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/download"/>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/socialicons"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:gravity="center">-->
 
 
-    </LinearLayout>
+<!--        <ImageView-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:src="@drawable/download"/>-->
+
+
+<!--    </LinearLayout>-->
 
 
 

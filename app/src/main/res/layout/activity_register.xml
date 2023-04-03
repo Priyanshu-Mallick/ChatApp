@@ -121,29 +121,29 @@
         android:background="@android:color/transparent"
         android:textSize="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/info"
-        android:layout_above="@id/socialicons"
-        android:text="or sign up with"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/info"-->
+<!--        android:layout_above="@id/socialicons"-->
+<!--        android:text="or sign up with"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_centerHorizontal="true"/>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/socialicons"
-        android:gravity="center"
-        android:layout_alignParentBottom="true">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/socialicons"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_alignParentBottom="true">-->
 
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/download"/>
+<!--        <ImageView-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:src="@drawable/download"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 
 

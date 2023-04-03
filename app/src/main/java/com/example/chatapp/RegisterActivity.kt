@@ -3,9 +3,11 @@ package com.example.chatapp
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
@@ -13,11 +15,17 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.GoogleAuthProvider
 
-class RegisterActivity : Activity() {
+
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -109,10 +117,82 @@ class RegisterActivity : Activity() {
                         .show()
                 }
         }
+
+//      For google authentication
+//        val gAuth = findViewById<TextView>(R.id.info)
+//        val gOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestEmail()
+//            .build()
+//        val gClient = GoogleSignIn.getClient(this, gOptions)
+//        val gAccount = GoogleSignIn.getLastSignedInAccount(this)
+//        if (gAccount != null) {
+//            finish()
+//            val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        val activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+//            if (result.resultCode == Activity.RESULT_OK) {
+//                val data = result.data
+//                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+//
+//                try {
+//                    task.getResult(ApiException::class.java)
+//                    finish()
+//                    val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+//                    startActivity(intent)
+//                } catch (e: ApiException) {
+//                    Toast.makeText(this@RegisterActivity, "Something went wrong", Toast.LENGTH_SHORT).show()
+//                }
+//                handleResults(task)
+//            }
+//        }
+//
+//        gAuth.setOnClickListener {
+//            val signInIntent = gClient.signInIntent
+//            activityResultLauncher.launch(signInIntent)
+//        }
+
     }
 
     private fun addUserToDatabase(name: String, email: String, uid: String){
         mDbRef = FirebaseDatabase.getInstance().getReference()
         mDbRef.child("user").child(uid).setValue(User(name,email,uid))
     }
+
+//    private fun handleResults(task: Task<GoogleSignInAccount>) {
+//        if (task.isSuccessful){
+//            val account : GoogleSignInAccount? = task.result
+//            if (account != null){
+//                updateUI(account)
+//            }
+//        }else{
+//            Toast.makeText(this, task.exception.toString() , Toast.LENGTH_SHORT).show()
+//        }
+//    }
+
+//    private fun updateUI(account: GoogleSignInAccount) {
+//        val credential = GoogleAuthProvider.getCredential(account.idToken , null)
+//        auth.signInWithCredential(credential).addOnCompleteListener {
+//            if (it.isSuccessful){
+//                val intent : Intent = Intent(this , MainActivity::class.java)
+////                intent.putExtra("email" , account.email)
+////                intent.putExtra("name" , account.displayName)
+//                account.displayName?.let { it1 -> account.email?.let { it2 ->
+//                    account.id?.let { it3 ->
+//                        addUserToDatabase(it1,
+//                            it2, it3
+//                        )
+//                    }
+//                    Toast.makeText(baseContext, "success",
+//                        Toast.LENGTH_SHORT).show()
+//                } }
+//                startActivity(intent)
+//                finish()
+//            }else{
+//                Toast.makeText(this, it.exception.toString() , Toast.LENGTH_SHORT).show()
+//
+//            }
+//        }
+//    }
 }
